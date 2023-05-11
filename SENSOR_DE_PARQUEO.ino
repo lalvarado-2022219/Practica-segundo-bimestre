@@ -1,3 +1,14 @@
+/* 
+ * Fundacion Kinal
+ * Centro educativo tecnico laboral Kinal
+ * Perito en electonica
+ * Quinto perito
+ * EB5AM / EB5AV
+ * Taller de electronica digital y reparacion de computadoras
+ * Nombre: Luis Fernando Alvarado Ramirez
+ * Fecha: 11/05/2023
+ * Proyecto: SENSOR DE PARQUEO
+ */
 int a;
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h> 
