@@ -74,11 +74,6 @@ Servo_entrada.write(0);
 Servo_garage.write(0);
 Servo_sanitario.write(0);
 Servo_cocina.write(0);
-//Inicializo los relays en alto, para que se apaguen.
-digitalWrite(relay_1,HIGH);
-digitalWrite(relay_2,HIGH);
-digitalWrite(relay_3,HIGH);
-digitalWrite(relay_4,HIGH);
 //Inicializo la lcd.
 lcd.init();
 //Enciendo la luz del fondo.
@@ -317,7 +312,7 @@ case 'j':
 break;
 
 case 'k':
-  Servo_cocina.write(90);
+  Servo_cocina.write(0);
   lcd.setCursor(1,0);
   lcd.print("La cocina a");
   lcd.setCursor(2,3);
@@ -336,8 +331,9 @@ if(usuario==0)
 int valuer_habitacion=digitalRead(Radarpin_habitacion);
 int valuer_entrada=digitalRead(Radarpin_entrada);
 //En caso de que cualquier sensor se active, se emitira una alarma por medio del buzzer.
-if((((valuer_habitacion==LOW)||(valuer_entrada==LOW))))
+if((((valuer_habitacion==HIGH)||(valuer_entrada==HIGH))))
 {
+lcd.clear();
 Serial.println("Detecte algo");
 lcd.setCursor(3,0);
 lcd.print("PRECENCIA");
